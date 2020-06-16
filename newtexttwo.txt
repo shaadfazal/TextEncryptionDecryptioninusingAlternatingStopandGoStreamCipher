@@ -1,0 +1,5 @@
+The Encrypted text is
+)uwvz{"3)E	""gOzi\9@_N5Z`%`qn;\y+s=`K
+2dY]kxA8CAI1!4"i#1	45$<C#p
+The decrypted text is
+Text encryption decryption in python using alternating stop and go generator

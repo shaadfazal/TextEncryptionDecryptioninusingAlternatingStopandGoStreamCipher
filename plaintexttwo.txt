@@ -1,0 +1,1 @@
+Text encryption decryption in python using alternating stop and go generator
