@@ -1,0 +1,2 @@
+# TextEncryptionDecryptioninusingAlternatingStopandGoStreamCipher
+Text encryption and decryption using alternating stop and go generator stream cipher
