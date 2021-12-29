@@ -1,6 +1,6 @@
 import numpy as np
 fp = open('plaintexttwo.txt', "wt")
-fp.write("Text encryption decryption in python using alternating stop and go generator")
+fp.write("Text encryption decryption in python using alternating stop and go generator")    # Text to be encrypted
 fp.close()
 emp = []
 op = []
@@ -11,13 +11,13 @@ np.array(emp)
 fp = open('plaintexttwo.txt', "rt")
 for i in fp:
     for a in i:
-        val=ord(a)
+        val=ord(a)                          # Converting to ASCII equivalent character number
         while(val>0):
             for z in range(0,7):
-                emp.append(val%2)
+                emp.append(val%2)           # Conversion of ASCII number to binary
                 val=val//2
 fp.close()
-lfsr1=[1,0,1]
+lfsr1=[1,0,1]                               # Initializing linear feedback shift registers
 np.array(lfsr1)
 lfsr2=[1,0,1,0]
 np.array(lfsr2)
@@ -36,7 +36,7 @@ for a in range(0,(len(i)*7)):
     k=((lfsr1[0]+lfsr1[2])%2)
     if(x==1):
         z=lfsr2[3]
-        c = ((lfsr2[0] + lfsr2[3]) % 2)
+        c = ((lfsr2[0] + lfsr2[3]) % 2)                     # Encryption algorithm of Alternating Stop and Go Stream Cipher
         for b in range(2,-1,-1):
             lfsr2[b+1]=lfsr2[b]
         lfsr2[0]=c
@@ -53,16 +53,16 @@ for a in range(0,(len(i)*7)):
 b=0
 print(emp)
 print(op)
-res=np.bitwise_xor(emp,op)
+res=np.bitwise_xor(emp,op)                          # Encryption
 print(res)
 print(ec)
-dec=np.bitwise_xor(res,op)
+dec=np.bitwise_xor(res,op)                          # Decryption
 lp = open('newtexttwo.txt', "wt")
 lp.write("The Encrypted text is\n")
 while(b<len(i)*7):
     d=0
     for j in range(b,b+7):
-        d=d+(pow(2,j-b)*res[j])
+        d=d+(pow(2,j-b)*res[j])                     # Converting the encrypted bits to ASCII characters
     ec.append(chr(d))
     b=b+7
 print(ec)
@@ -75,7 +75,7 @@ m=0
 while(m<len(i)*7):
     d=0
     for j in range(m,m+7):
-        d=d+(pow(2,j-m)*dec[j])
+        d=d+(pow(2,j-m)*dec[j])                      # Converting the decrypted bits to ASCII characters
     dc.append(chr(d))
     m=m+7
 print(dc)
